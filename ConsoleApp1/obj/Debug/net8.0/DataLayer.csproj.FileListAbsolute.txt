@@ -1,0 +1,14 @@
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\bin\Debug\net8.0\DataLayer.deps.json
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\bin\Debug\net8.0\DataLayer.runtimeconfig.json
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\bin\Debug\net8.0\DataLayer.dll
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\bin\Debug\net8.0\DataLayer.pdb
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.csproj.AssemblyReference.cache
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.AssemblyInfoInputs.cache
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.AssemblyInfo.cs
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.csproj.CoreCompileInputs.cache
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.dll
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\refint\DataLayer.dll
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.pdb
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\DataLayer.genruntimeconfig.cache
+E:\KB\web\webappmvc\WebApplication1\ConsoleApp1\obj\Debug\net8.0\ref\DataLayer.dll

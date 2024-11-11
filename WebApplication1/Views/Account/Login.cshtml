@@ -1,0 +1,55 @@
+﻿@model WebApplication1.Models.LoginViewModel
+
+<h2>Вхід в додаток</h2>
+
+<form id="loginForm" method="post" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@Model.ReturnUrl">
+    <div id="errorMessage" class="text-danger" style="display: none;"></div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password"></label><br />
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-check">
+        <input asp-for="RememberMe" class="form-check-input" />
+        <label asp-for="RememberMe" class="form-check-label">Запам'ятати мене</label>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="button" id="loginButton" class="btn btn-primary">Увійти</button>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#loginButton').click(function (event) {
+                event.preventDefault(); // Запобігає стандартному відправленню форми
+
+                $.ajax({
+                    url: '@Url.Action("Login", "Account")',
+                    type: 'POST',
+                    data: $('#loginForm').serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            window.location.href = response.returnUrl || response.redirectUrl;
+                        } else {
+                            $('#errorMessage').text(response.message).show();
+                        }
+                    },
+                    error: function () {
+                        $('#errorMessage').text("Помилка сервера, спробуйте пізніше.").show();
+                    }
+                });
+            });
+        });
+    </script>
+}

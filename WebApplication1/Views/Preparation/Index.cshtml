@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebApplication1.Models.PreparationEnitities.PreparationVm>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProviderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TradeNameId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProviderDisp)
+                </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.TradeNameDisp)
+                </th>
+                <td>
+                    <a asp-action="Edit" asp-controller="Preparation" asp-route-id="@item.Id">Редактировать</a> |
+                    <a asp-action="Delete" asp-controller="Preparation" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

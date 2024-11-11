@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using DataLayer.Entityes
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="d-flex align-items-center">
+        <p class="mt-1 mr-3">Привіт, @User.Identity.Name</p>
+
+        <form method="post" asp-controller="Account" asp-action="Logout" class="d-inline">
+            <input class="btn btn-danger" type="submit" value="Вийти" />
+        </form>
+    </div>
+}
+else
+{
+    <div>
+        <a class="btn btn-link" asp-controller="Account" asp-action="Login">Вхід</a>
+        <a class="btn btn-link" asp-controller="Account" asp-action="Register">Реєстрація</a>
+    </div>
+}

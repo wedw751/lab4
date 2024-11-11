@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h2>Панель адміністратора</h2>
+    <p>@Html.ActionLink("Керування Ролями", "Index", "Roles", null, new { @class = "btn btn-sm btn-primary" })</p>
+    <p>@Html.ActionLink("Керування Користувачами", "Index", "Users", null, new { @class = "btn btn-sm btn-primary" })</p>
+    <p>@Html.ActionLink("Керування Докторами", "Index", "Doctor", null, new { @class = "btn btn-sm btn-primary" })</p>
+    <p>@Html.ActionLink("Керування Постачальниками", "Index", "Provider", null, new { @class = "btn btn-sm btn-primary" })</p>
+    <p>@Html.ActionLink("Керування Торгівельними Назвами", "Index", "TradeName", null, new { @class = "btn btn-sm btn-primary" })</p>
+    <p>@Html.ActionLink("Керування Препаратими", "Index", "Preparation", null, new { @class = "btn btn-sm btn-primary" })</p>
+</div>

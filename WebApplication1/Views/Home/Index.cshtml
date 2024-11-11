@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-4">
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (User.IsInRole("admin"))
+            {
+                <div>
+                    <h2>Панель адміністратора</h2>
+                    <p>@Html.ActionLink("Керування Ролями", "Index", "Roles", null, new { @class = "btn btn-sm btn-primary" })</p>
+                    <p>@Html.ActionLink("Керування Користувачами", "Index", "Users", null, new { @class = "btn btn-sm btn-primary" })</p>
+                    <p>@Html.ActionLink("Керування Докторами", "Index", "Doctor", null, new { @class = "btn btn-sm btn-primary" })</p>
+                    <p>@Html.ActionLink("Керування Постачальниками", "Index", "Provider", null, new { @class = "btn btn-sm btn-primary" })</p>
+                    <p>@Html.ActionLink("Керування Торгівельними Назвами", "Index", "TradeName", null, new { @class = "btn btn-sm btn-primary" })</p>
+                    <p>@Html.ActionLink("Керування Препаратами", "Index", "Preparation", null, new { @class = "btn btn-sm btn-primary" })</p>
+                </div>
+            }
+        }
+    </div>
+    <div class="col-8">
+        <h2>Список Препаратів</h2>
+        @if (ViewBag.Preparation != null) // Перевірка на наявність препаратів
+        {
+            foreach (var item in ViewBag.Preparation) // Використовуємо правильну назву
+            {
+                <div class="card" style="width: inherit">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <h5 class="card-text">Ціна: @item.Price.ToString("c")</h5>
+                        <p class="card-text">Торгове Ім'я: @item?.NameTrade?.Name</p>
+                        <p class="card-text">Постачальник: @item?.Provider?.Name</p>
+
+                        <form id="@item.Id" asp-action="AddToCart" asp-controller="Cart" method="post">
+                            <input type="hidden" id="Id" name="Id" value="@item.Id" />
+                            <input type="hidden" name="returnUrl" value="Home" />
+                            <span class="card-text p-1">
+                                <button type="submit" class="btn btn-success btn-sm pull-right" style="float:right">
+                                    Додати до кошика
+                                </button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Дані відсутні</p> 
+        }
+    </div>
+</div>
